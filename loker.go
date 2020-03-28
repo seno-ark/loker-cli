@@ -4,14 +4,9 @@ import (
 	"fmt"
 	"errors"
 	"strings"
-	"regexp"
 )
 
 func initLoker(capacity int) (res string, err error){
-	if capacity < 1 {
-		err = errors.New(message["invalid_argument"])
-		return
-	}
 
 	if len(loker) > 0 {
 		err = errors.New(message["init_duplicate"])
@@ -50,14 +45,6 @@ func lokerStatus() (res string, err error) {
 
 func inputIdCard(cardType string, cardNo int) (res string, err error){
 
-	regex, _ := regexp.Compile(`^[a-zA-Z]+$`)
-	cardTypeIsAlphabet := regex.MatchString(cardType)
-
-	if cardType == "" || cardNo < 1 || !cardTypeIsAlphabet{
-		err = errors.New(message["invalid_argument"])
-		return
-	}
-
 	if len(loker) == 0 {
 		err = errors.New(message["loker_slot_empty"])
 		return
@@ -92,11 +79,6 @@ func inputIdCard(cardType string, cardNo int) (res string, err error){
 }
 
 func leaveIdCard(lokerId int) (res string, err error){
-
-	if lokerId < 1 {
-		err = errors.New(message["invalid_argument"])
-		return
-	}
 
 	if len(loker) == 0 {
 		err = errors.New(message["loker_slot_empty"])

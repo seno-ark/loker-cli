@@ -5,6 +5,7 @@ import (
 	"strings"
 	"strconv"
 	"errors"
+	"regexp"
 )
 
 type idCard struct {
@@ -27,7 +28,7 @@ func initHandler(capacity string) {
 	}
 
 	lokerCap, err = strconv.Atoi(capacity)
-	if err != nil {
+	if err != nil || lokerCap < 1 {
 		err = errors.New(message["invalid_argument"])
 		showResult(res, err)
 		return
@@ -57,8 +58,12 @@ func inputHandler(cardType, cardNo string) {
 		return
 	}
 
+	regex, _ := regexp.Compile(`^[a-zA-Z]+$`)
+	cardTypeIsAlphabet := regex.MatchString(cardType)
+
 	cardNumber, err = strconv.Atoi(cardNo)
-	if err != nil {
+
+	if err != nil || cardNumber < 1 || !cardTypeIsAlphabet {
 		err = errors.New(message["invalid_argument"])
 		showResult(res, err)
 		return
@@ -82,7 +87,7 @@ func leaveHandler(lokerNo string) {
 	}
 
 	lokerId, err = strconv.Atoi(lokerNo)
-	if err != nil {
+	if err != nil || lokerId < 1 {
 		err = errors.New(message["invalid_argument"])
 		showResult(res, err)
 		return
@@ -106,7 +111,7 @@ func findHandler(cardNo string) {
 	}
 
 	cardNumber, err = strconv.Atoi(cardNo)
-	if err != nil {
+	if err != nil || cardNumber < 1 {
 		err = errors.New(message["invalid_argument"])
 		showResult(res, err)
 		return
