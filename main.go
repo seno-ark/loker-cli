@@ -33,7 +33,7 @@ func initHandler(capacity string) {
 		return
 	}
 
-	res, err = createLoker(lokerCap)
+	res, err = initLoker(lokerCap)
 	showResult(res, err)
 }
 

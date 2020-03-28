@@ -7,7 +7,7 @@ import (
 	"regexp"
 )
 
-func createLoker(capacity int) (res string, err error){
+func initLoker(capacity int) (res string, err error){
 	if capacity < 1 {
 		err = errors.New(message["invalid_argument"])
 		return
