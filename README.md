@@ -48,3 +48,7 @@ Cara menggunakan:
 5. Selain itu juga terdapat fitur pencarian nomor identitas yang disaring berdasarkan tipe identitas: `search <tipe identitas>`
 6. Untuk mengeluarkan kartu identitas dari loker, gunakan perintah `leave <nomor loker>`
 7. Untuk keluar dari aplikasi, ketik `exit` lalu tekan Enter.
+
+screenshot  
+
+![picture](ss.png)
