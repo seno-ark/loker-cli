@@ -1,10 +1,10 @@
 # loker-cli
 
 Program loker interaktif sederhana dengan menggunakan command line untuk menyimpan kartu identitas.
-Program ini dibuat menggunakan bahasa pemrograman Golang
+Program ini dibuat menggunakan bahasa pemrograman Golang.
 
 
-#### Cara menjalankan program
+#### Menjalankan program
 
 Masuk ke direktori proyek Go  
 ```cd $GOPATH/src```
@@ -19,8 +19,18 @@ jalankan program loker-cli
 ```$GOPATH/bin/loker-cli```
 
 
-#### Cara menggunakan program
+#### Menggunakan program
 
+Daftar perintah yang bisa digunakan:
+- init \<jumlah loker\>
+- input \<tipe identitas\> \<nomor identitas\>
+- status
+- find \<nomor identitas\>
+- search \<tipe identitas\>
+- leave \<nomor loker\>
+- exit
+
+Cara menggunakan:
 1. Membuat loker terlebih dahulu, dengan cara menjalankan perintah `init <jumlah loker>` lalu tekan Enter.
 2. Memasukkan kartu identitas ke dalam loker, dengan perintah `input <tipe identitas> <nomor identitas>`
 3. Untuk melihat semua isi loker, dapat menggunakan perintah `status`
