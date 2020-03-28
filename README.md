@@ -12,6 +12,16 @@ Masuk ke direktori proyek Go
 clone Repository  
 ```git clone https://github.com/seno-ark/loker-cli.git```
 
+##### Untuk developer:
+
+```
+cd locker-cli
+go test -v
+go run .
+```
+
+##### Untuk user:
+
 install program  
 ```go install loker-cli```
 
